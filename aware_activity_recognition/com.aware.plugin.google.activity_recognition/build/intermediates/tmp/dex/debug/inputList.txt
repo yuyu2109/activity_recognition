@@ -1,0 +1,11 @@
+/home/yuyu/Projet_spe/AndroidStudioProjects/activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/classes/debug
+/home/yuyu/Projet_spe/AndroidStudioProjects/activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/pre-dexed/debug/support-annotations-21.0.3-261a4164b84d2dbe19d6b4dc34f0893e1b003579.jar
+/home/yuyu/Projet_spe/AndroidStudioProjects/activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/pre-dexed/debug/zbar-afa4b909bb08124aec1e8ec6bd92ca1e4d126aed.jar
+/home/yuyu/Projet_spe/AndroidStudioProjects/activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/pre-dexed/debug/classes-536964188f761f70cd4efb49eed95ee6318d7075.jar
+/home/yuyu/Projet_spe/AndroidStudioProjects/activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/pre-dexed/debug/classes-e4abe00d9694659674f346b217a556f3f1b58b50.jar
+/home/yuyu/Projet_spe/AndroidStudioProjects/activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-dd0705cdcf5797b0437de6415f25b24525a287e8.jar
+/home/yuyu/Projet_spe/AndroidStudioProjects/activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/pre-dexed/debug/mqtt-client-0.4.0-dad160d80d352debe8628e1a3cafcbe1c5dee625.jar
+/home/yuyu/Projet_spe/AndroidStudioProjects/activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/pre-dexed/debug/classes-9796dc818a3fee52f13cad9fa3901bf624eb55fc.jar
+/home/yuyu/Projet_spe/AndroidStudioProjects/activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/pre-dexed/debug/classes-e4a5722aefc9bd7248f05fe9db58f2e07c25dfc3.jar
+/home/yuyu/Projet_spe/AndroidStudioProjects/activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/pre-dexed/debug/classes-8f2d6181d28434a021afc6f04f76313489c03ea2.jar
+/home/yuyu/Projet_spe/AndroidStudioProjects/activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/pre-dexed/debug/classes-2050736073468805b89c23faf6c0bdc154ddc95d.jar

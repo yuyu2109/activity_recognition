@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/home/yuyu/Projet_spe/AndroidStudioProjects/activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/exploded-aar/com.awareframework/aware-core/3.2.8/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="0c47b9d9e68a9f0b5a7e4c14453ed467e1f1d3cf">
+        <dex dex="/home/yuyu/Projet_spe/AndroidStudioProjects/activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/pre-dexed/debug/classes-9796dc818a3fee52f13cad9fa3901bf624eb55fc.jar" />
+    </item>
+    <item
+        jar="/home/yuyu/Projet_spe/AndroidStudioProjects/activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/exploded-aar/com.android.support/gridlayout-v7/21.0.3/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="2e8c06a7aad26ba8d2d5cab8134556594fe36856">
+        <dex dex="/home/yuyu/Projet_spe/AndroidStudioProjects/activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/pre-dexed/debug/classes-e4abe00d9694659674f346b217a556f3f1b58b50.jar" />
+    </item>
+    <item
+        jar="/home/yuyu/Projet_spe/AndroidStudioProjects/activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.5.87/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="dd9247ea0fabe8ee479638c4b4a23e93752be256">
+        <dex dex="/home/yuyu/Projet_spe/AndroidStudioProjects/activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/pre-dexed/debug/classes-2050736073468805b89c23faf6c0bdc154ddc95d.jar" />
+    </item>
+    <item
+        jar="/home/yuyu/Projet_spe/AndroidStudioProjects/activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/exploded-aar/com.awareframework/aware-core/3.2.8/libs/zbar.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="0a7b88ba1496a0b4af76069ad40dacd3897149e0">
+        <dex dex="/home/yuyu/Projet_spe/AndroidStudioProjects/activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/pre-dexed/debug/zbar-afa4b909bb08124aec1e8ec6bd92ca1e4d126aed.jar" />
+    </item>
+    <item
+        jar="/home/yuyu/Projet_spe/AndroidStudioProjects/activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
+        <dex dex="/home/yuyu/Projet_spe/AndroidStudioProjects/activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/pre-dexed/debug/classes-8f2d6181d28434a021afc6f04f76313489c03ea2.jar" />
+    </item>
+    <item
+        jar="/home/yuyu/Projet_spe/AndroidStudioProjects/activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
+        <dex dex="/home/yuyu/Projet_spe/AndroidStudioProjects/activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/pre-dexed/debug/classes-e4a5722aefc9bd7248f05fe9db58f2e07c25dfc3.jar" />
+    </item>
+    <item
+        jar="/usr/local/install/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/21.0.3/support-annotations-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
+        <dex dex="/home/yuyu/Projet_spe/AndroidStudioProjects/activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/pre-dexed/debug/support-annotations-21.0.3-261a4164b84d2dbe19d6b4dc34f0893e1b003579.jar" />
+    </item>
+    <item
+        jar="/home/yuyu/Projet_spe/AndroidStudioProjects/activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/exploded-aar/com.awareframework/aware-core/3.2.8/libs/mqtt-client-0.4.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="02315d1759d01e52495e040e6e538aaa2e91c7f6">
+        <dex dex="/home/yuyu/Projet_spe/AndroidStudioProjects/activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/pre-dexed/debug/mqtt-client-0.4.0-dad160d80d352debe8628e1a3cafcbe1c5dee625.jar" />
+    </item>
+    <item
+        jar="/home/yuyu/Projet_spe/AndroidStudioProjects/activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/exploded-aar/com.android.support/cardview-v7/21.0.3/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="00b0b7233e1ec64acebfac40d4983d32d4712426">
+        <dex dex="/home/yuyu/Projet_spe/AndroidStudioProjects/activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/pre-dexed/debug/classes-536964188f761f70cd4efb49eed95ee6318d7075.jar" />
+    </item>
+    <item
+        jar="/home/yuyu/Projet_spe/AndroidStudioProjects/activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/libs/internal_impl-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
+        <dex dex="/home/yuyu/Projet_spe/AndroidStudioProjects/activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-dd0705cdcf5797b0437de6415f25b24525a287e8.jar" />
+    </item>
+
+</items>
