@@ -29,6 +29,7 @@ public class Plugin extends Aware_Plugin implements GoogleApiClient.ConnectionCa
 	public static int current_activity = -1;
 	public static int current_confidence = -1;
 
+	/* Info about last activity checked */
 	public static int type = -1;
 	public static long time = -1;
 	public static long confidence = -1;

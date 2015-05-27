@@ -118,11 +118,11 @@ public class ContextCard implements IContextCard {
                 break;
             case DetectedActivity.TILTING:
                 if (Plugin.confidence >= 70)
-                    icon.setImageResource(R.drawable.tilting_red_own);
+                    icon.setImageResource(R.drawable.ic_action_tilting_own);
                 else
-                    icon.setImageResource(R.drawable.tilting_own);
+                    icon.setImageResource(R.drawable.ic_action_tilting_grey_own);
 
-                text.setText("Changing activity at " + Converters.readable_elapsed(getTime(now, Plugin.time)) + " with confidence " + Plugin.confidence);
+                text.setText("I'm not sure what you are doing at " + Converters.readable_elapsed(getTime(now, Plugin.time)));
                 break;
             case DetectedActivity.RUNNING:
                 if (Plugin.confidence >= 70)
