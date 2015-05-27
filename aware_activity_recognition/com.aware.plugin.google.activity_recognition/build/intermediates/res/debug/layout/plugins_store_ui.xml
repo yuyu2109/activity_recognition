@@ -65,4 +65,4 @@
             android:dividerHeight="0dp" />
 
     </android.support.v4.widget.DrawerLayout>
-</LinearLayout><!-- From: file:/Users/denzil/BTSync/Programming/aware-client/aware-core/src/main/res/layout/plugins_store_ui.xml --><!-- From: file:/home/yuyu/Projet_spe/AndroidStudioProjects/activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/exploded-aar/com.awareframework/aware-core/3.2.8/res/layout/plugins_store_ui.xml -->
+</LinearLayout><!-- From: file:/Users/denzil/BTSync/Programming/aware-client/aware-core/src/main/res/layout/plugins_store_ui.xml --><!-- From: file:/home/yuyu/Projet_spe/activity_recognition/aware_activity_recognition/com.aware.plugin.google.activity_recognition/build/intermediates/exploded-aar/com.awareframework/aware-core/3.2.8/res/layout/plugins_store_ui.xml -->

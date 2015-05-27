@@ -18,4 +18,4 @@
         android:title="How frequently to detect (in seconds)"
         android:inputType="numberDecimal" />
 
-</PreferenceScreen><!-- From: file:/home/yuyu/Projet_spe/AndroidStudioProjects/activity_recognition/com.aware.plugin.google.activity_recognition/src/main/res/xml/preferences.xml -->
+</PreferenceScreen><!-- From: file:/home/yuyu/Projet_spe/activity_recognition/aware_activity_recognition/com.aware.plugin.google.activity_recognition/src/main/res/xml/preferences.xml -->

@@ -20,7 +20,7 @@ import com.google.android.gms.location.DetectedActivity;
  */
 public class ContextCard implements IContextCard {
     public static final int IND_MAX = 20;
-    public ContextCard(){};
+    public ContextCard(){}
 	
 	public View getContextCard(Context context) {
 		LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -114,7 +114,7 @@ public class ContextCard implements IContextCard {
                 else
                     icon.setImageResource(R.drawable.unknown_grey_own);
 
-                text.setText("     Unknown at " + Converters.readable_elapsed(getTime(now, Plugin.time)) + " with confidence " + Plugin.confidence);
+                text.setText("Unknown at " + Converters.readable_elapsed(getTime(now, Plugin.time)) + " with confidence " + Plugin.confidence);
                 break;
             case DetectedActivity.TILTING:
                 if (Plugin.confidence >= 70)
