@@ -1,10 +1,16 @@
 package com.aware.plugin.google.activity_recognition;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.Calendar;
 
 import android.content.Context;
+import android.os.Environment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -20,9 +26,57 @@ import com.google.android.gms.location.DetectedActivity;
  */
 public class ContextCard implements IContextCard {
     public static final int IND_MAX = 20;
+    private Calendar mCalendar;
+
     public ContextCard(){}
-	
+
+    private Context sContext;
+
+    public static FileOutputStream fOut;
+    private static boolean init = false;
+
+    /* Checks if external storage is available for read and write */
+    private static boolean isExternalStorageWritable() {
+        String state = Environment.getExternalStorageState();
+        return Environment.MEDIA_MOUNTED.equals(state);
+    }
+
+    private static File getStorageDir(String name) {
+        // Get the directory for the user's public pictures directory.
+        File file = new File(Environment.getExternalStoragePublicDirectory(
+                Environment.DIRECTORY_DOCUMENTS), name);
+        if (!file.mkdirs()) {
+            Log.e("LOG", "Directory not created");
+        }
+        return file;
+    }
+
+    private String getActivity() {
+        switch (Plugin.type) {
+            case DetectedActivity.IN_VEHICLE:
+                return "Vehicle";
+            case DetectedActivity.ON_BICYCLE:
+                return "Bicycle";
+            case DetectedActivity.ON_FOOT:
+                return "On foot";
+            case DetectedActivity.STILL:
+                return "Still";
+            case DetectedActivity.UNKNOWN:
+                return "Unknown";
+            case DetectedActivity.TILTING:
+                return "Tilting";
+            case DetectedActivity.RUNNING:
+                return "Running";
+            case DetectedActivity.WALKING:
+                return "Walking";
+            default:
+                return "Error";
+        }
+    }
+
 	public View getContextCard(Context context) {
+        sContext = context;
+
 		LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		View mInflated = inflater.inflate(R.layout.layout, null);
 		
@@ -30,8 +84,10 @@ public class ContextCard implements IContextCard {
         TextView walking = (TextView) mInflated.findViewById(R.id.time_walking);
         TextView biking = (TextView) mInflated.findViewById(R.id.time_biking);
         TextView vehicle = (TextView) mInflated.findViewById(R.id.time_vehicle);
+        final TextView textWrite = (TextView) mInflated.findViewById(R.id.textWrite);
+        Button write = (Button) mInflated.findViewById(R.id.write);
 
-        Calendar mCalendar = Calendar.getInstance();
+        mCalendar = Calendar.getInstance();
         mCalendar.setTimeInMillis(System.currentTimeMillis());
 
         //Modify time to be at the begining of today
@@ -42,10 +98,10 @@ public class ContextCard implements IContextCard {
 
         long now = mCalendar.getTime().getTime();
 
-        long lastTimeStill = Stats.getLastTimeStill(context.getContentResolver(), mCalendar.getTimeInMillis(), System.currentTimeMillis());
-        long lastTimeWalking = Stats.getLastTimeWalking(context.getContentResolver(), mCalendar.getTimeInMillis(), System.currentTimeMillis());
-        long lastTimeBiking = Stats.getLastTimeBiking(context.getContentResolver(), mCalendar.getTimeInMillis(), System.currentTimeMillis());
-        long lastTimeVehicle = Stats.getLastTimeVehicle(context.getContentResolver(), mCalendar.getTimeInMillis(), System.currentTimeMillis());
+        long lastTimeStill = Stats.getLastTimeStill(sContext.getContentResolver(), mCalendar.getTimeInMillis(), System.currentTimeMillis());
+        long lastTimeWalking = Stats.getLastTimeWalking(sContext.getContentResolver(), mCalendar.getTimeInMillis(), System.currentTimeMillis());
+        long lastTimeBiking = Stats.getLastTimeBiking(sContext.getContentResolver(), mCalendar.getTimeInMillis(), System.currentTimeMillis());
+        long lastTimeVehicle = Stats.getLastTimeVehicle(sContext.getContentResolver(), mCalendar.getTimeInMillis(), System.currentTimeMillis());
 
         //Get stats for today
         //still.setText(Converters.readable_elapsed(Stats.getLastTimeStill(context.getContentResolver(), mCalendar.getTimeInMillis(), System.currentTimeMillis())));
@@ -54,12 +110,52 @@ public class ContextCard implements IContextCard {
         biking.setText(Converters.readable_elapsed(getTime(now, lastTimeBiking)));
         vehicle.setText(Converters.readable_elapsed(getTime(now, lastTimeVehicle)));
 
-        for (int k = 0; k < IND_MAX; k++) {
-            Stats.getActivity(context.getContentResolver(), mCalendar.getTimeInMillis(), System.currentTimeMillis(), k);
-            setInfo(context, mInflated, now, k);
+        if (!init) {
+            init = true;
+
+            // Writing data in a file
+            File dir = getStorageDir("Logs");
+            File file = new File(dir, "LogGoogle.txt");
+            try {
+                if (!dir.exists())
+                    dir.createNewFile();
+                if (!file.exists())
+                    file.createNewFile();
+
+                fOut = new FileOutputStream(file, true);
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
 
-		return mInflated;
+        write.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String result = "";
+                for (int k = 0; k < 5; k++) {
+                    Stats.getActivity(sContext.getContentResolver(), mCalendar.getTimeInMillis(), System.currentTimeMillis(), k);
+                    result += "Time : " + Converters.readable_elapsed(getTime(mCalendar.getTimeInMillis() ,Plugin.time))
+                            + " / Activity " + getActivity() + " / Confidence " + Plugin.confidence + "\n";
+                }
+                result += "\n";
+
+                try {
+                    fOut.write(result.getBytes());
+                    textWrite.setText("SAVED at " + Converters.readable_elapsed(getTime(mCalendar.getTimeInMillis(),
+                            System.currentTimeMillis())));
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
+        for (int k = 0; k < IND_MAX; k++) {
+            Stats.getActivity(sContext.getContentResolver(), mCalendar.getTimeInMillis(), System.currentTimeMillis(), k);
+            setInfo(sContext, mInflated, now, k);
+        }
+
+        return mInflated;
 	}
 
     private long getTime(long now, long time) {
@@ -70,7 +166,7 @@ public class ContextCard implements IContextCard {
 
     private void setInfo(Context context, View mInflated, long now ,int indice) {
         int image_resource = context.getResources().getIdentifier("icon_show" + indice, "id", context.getPackageName());
-        int text_resource = context.getResources().getIdentifier("textShow"  +indice, "id", context.getPackageName());
+        int text_resource = context.getResources().getIdentifier("textShow"  + indice, "id", context.getPackageName());
 
         ImageView icon = (ImageView) mInflated.findViewById(image_resource);
         TextView text = (TextView) mInflated.findViewById(text_resource);

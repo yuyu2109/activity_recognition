@@ -17,6 +17,8 @@ import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.ActivityRecognition;
 
+import java.io.IOException;
+
 public class Plugin extends Aware_Plugin implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
 
 	public static String ACTION_AWARE_GOOGLE_ACTIVITY_RECOGNITION = "ACTION_AWARE_GOOGLE_ACTIVITY_RECOGNITION";
@@ -97,6 +99,12 @@ public class Plugin extends Aware_Plugin implements GoogleApiClient.ConnectionCa
 
         wakelock.release();
         Aware.setSetting(getApplicationContext(), Settings.STATUS_PLUGIN_GOOGLE_ACTIVITY_RECOGNITION, false);
+
+		try {
+			ContextCard.fOut.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 
 		//we might get here if phone doesn't support Google Services
 		if ( gARClient != null && gARClient.isConnected() ) {
